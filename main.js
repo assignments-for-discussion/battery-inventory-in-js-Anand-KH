@@ -2,10 +2,10 @@ const assert = require("assert");
 
 function countBatteriesByHealth(presentCapacities) {
   var data = [];
-
+  var ratedbattery = 120; //rated capacity of the battery
   //calculating SoH and pushing it into an array and rounding off to 2 decimal places
   presentCapacities?.forEach((ele) => {
-    data.push(Number(100 * (ele / 120)).toFixed(2));
+    data.push(Number(100 * (ele / ratedbattery)).toFixed(2));
   });
 
   //taking variables and counting the healthy, exchange and failed batteries based on SoH
